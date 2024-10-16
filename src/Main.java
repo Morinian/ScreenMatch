@@ -4,6 +4,8 @@ import br.com.alura.screematch.modelos.modelos.Episodios;
 import br.com.alura.screematch.modelos.modelos.Filme;
 import br.com.alura.screematch.modelos.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -47,5 +49,18 @@ public class Main {
         episodio.setSerie(lost);
         episodio.setTotalVisulizacoes(300);
         filtro.filtra(episodio);
+
+        var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setNome("Avatar2");
+        filmeDoPaulo.setAnoDeLancamento(2023);
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoPaulo);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista " + listaDeFilmes.size());
+        System.out.println("Primeiro filme " + listaDeFilmes.get(0).getNome());
     }
 }
